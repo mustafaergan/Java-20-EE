@@ -4,6 +4,7 @@
 	
 	<class>com.mustafaergan.sirket.entity.Skor</class>
 	<class>com.mustafaergan.sirket.entity.Personel</class>
+	<class>com.mustafaergan.sirket.entity.Adres</class>
 	
 	<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
