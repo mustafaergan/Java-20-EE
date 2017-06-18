@@ -4,35 +4,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Transient;
 
 @Entity
-public class Skor {
-	
+public class Personel {
+
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	int id;
+	int personelId;
 	
 	String name;
 	
-	@Transient
-	String veri;
-	
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public void setPersonelId(int personelId) {
+		this.personelId = personelId;
+	}
+	
+	public int getPersonelId() {
+		return personelId;
 	}
 	
 	public String getName() {
 		return name;
 	}
 	
-
 }
