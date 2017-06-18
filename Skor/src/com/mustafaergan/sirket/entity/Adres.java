@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Adres {
@@ -15,6 +16,11 @@ public class Adres {
 
 	@Column(name = "adres_verisi")
 	String adresVerisi;
+	
+	
+	@ManyToOne
+	Il il;
+	
 	
 	public void setId(int id) {
 		this.id = id;
@@ -30,6 +36,14 @@ public class Adres {
 	
 	public String getAdresVerisi() {
 		return adresVerisi;
+	}
+	
+	public void setIl(Il il) {
+		this.il = il;
+	}
+	
+	public Il getIl() {
+		return il;
 	}
 	
 }

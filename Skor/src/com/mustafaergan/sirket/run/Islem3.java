@@ -8,9 +8,10 @@ public class Islem3 {
 	public static void main(String[] args) {
 		DAO dao = new DAO();
 		
-		Personel per =dao.getAPersonelId(2);
+		Personel per =dao.getAPersonelId(3);
 		
-		System.out.println(per.getAdres().getAdresVerisi());
+		System.out.println(per.
+				getAdres().getIl().getName());
 	}
 
 }
