@@ -27,6 +27,15 @@ public class Il {
 	inverseJoinColumns = @JoinColumn(name="adres_id"))
 	List<Adres> adresList = new ArrayList<>();
 	
+	public void setAdresList(List<Adres> adresList) {
+		this.adresList = adresList;
+	}
+	
+	public List<Adres> getAdresList() {
+		return adresList;
+	}
+	
+	
 	public void setId(int id) {
 		this.id = id;
 	}
