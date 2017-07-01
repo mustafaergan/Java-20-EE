@@ -21,6 +21,9 @@ public class Adres {
 	@ManyToOne
 	Il il;
 	
+//	@GeneratedValue(strategy=GenerationType.AUTO)
+//	int veri;
+	
 	
 	public void setId(int id) {
 		this.id = id;
