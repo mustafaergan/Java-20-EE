@@ -11,12 +11,19 @@
 </h:head>
 <h:body>
 	<center>
-		Hoş Geldiniz
-		<p:imageCompare leftImage="/resource/mustafazayif.jpg"
-                        rightImage="/resource/mustafasisman.jpg"
-                        width="250" height="215"/>
-	
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				<p:graphicImage url="resource/login.png" height="120" width="120"/>
+			</f:facet>
+			<h:outputText value="Kullanci Adı:"/>
+			<p:inputText/>
+			<h:outputText value="Şifre:"/>
+			<p:inputText/>
+			<h:outputText value=""/>
+			<p:commandButton value="Giriş"/>
+		</p:panelGrid>
 	</center>
+
 
     <p:dock position="bottom">
 	    <p:menuitem value="Ana Sayfa" icon="/resource/anamenu.png" url="index.xhtml"/>

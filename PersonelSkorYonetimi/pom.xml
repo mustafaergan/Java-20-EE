@@ -35,6 +35,8 @@
   
   
   <dependencies>
+  
+		<!--jsf -->
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
@@ -46,12 +48,14 @@
             <version>2.1.7</version>
         </dependency>
 
+<!-- 		tag -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
 
+<!-- 		servet -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -63,7 +67,7 @@
             <artifactId>jsp-api</artifactId>
             <version>2.1</version>
         </dependency>
-        
+<!--         primefaces -->
         <dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
