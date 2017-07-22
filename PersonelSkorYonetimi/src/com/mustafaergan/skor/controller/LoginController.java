@@ -1,10 +1,16 @@
 package com.mustafaergan.skor.controller;
 
+import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean
+@RequestScoped
+@ViewScoped
 @SessionScoped
+@ApplicationScoped
 public class LoginController {
 	String defaultUserName = "leprax";
 	String defaultSifre ="1234";
