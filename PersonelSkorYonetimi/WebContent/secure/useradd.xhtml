@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+<h:form>
+<p:growl id="messages" showDetail="false"/>
+<p:panelGrid columns="2">
+	
+	<p:menu toggleable="true">
+	   <p:submenu label="Skor Yönetimi">
+	       <p:menuitem value="Skor Görüntüle" url ="skorview.xhtml"  icon="ui-icon-disk" />
+	       <p:menuitem value="Skor Ekle" url="skoradd.xhtml" icon="ui-icon-arrowrefresh-1-w"/>
+	   </p:submenu>
+	   
+   	   <p:submenu label="Personel Yönetimi">
+	       <p:menuitem value="Personel Görütüle" url ="userview.xhtml"  icon="ui-icon-disk" />
+	       <p:menuitem value="Personel Ekle" url ="useradd.xhtml" icon="ui-icon-arrowrefresh-1-w"/>
+	   </p:submenu>
+	</p:menu>
+	
+	<p:panel>
+	
+	 <h:panelGrid columns="3" cellpadding="5">
+            <p:outputLabel for="textName" value="İsim" />
+            <p:inputText id="textName" value="#{personController.personAdd.name}" required="true" label="Firstname">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+            <p:message for="textName" />
+            
+            <p:outputLabel for="textUserName" value="Kullanci Adi" />
+            <p:inputText id="textUserName" value="#{personController.personAdd.userName}" required="true" label="Firstname">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+            <p:message for="textUserName" />
+            
+            <p:outputLabel for="textPassWord" value="Şifre" />
+            <p:inputText id="textPassWord" value="#{personController.personAdd.password}" required="true" label="Firstname">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+            <p:message for="textPassWord" />
+            
+            <p:outputLabel for="textRole" value="Role" />
+            <p:inputText id="textRole" value="#{personController.personAdd.role}" required="true" label="Firstname">
+               <f:validateLength minimum="2" />
+            </p:inputText>
+            <p:message for="textRole" />
+ 
+			<h:outputText value=""/>
+			<h:outputText value=""/>
+ 			<p:commandButton  value="Kayıt Et" actionListener="#{personController.save}" />
+ 
+        </h:panelGrid>
+	
+	</p:panel>
+	
+</p:panelGrid>
+</h:form>
+</h:body>
+</html>

@@ -16,13 +16,13 @@
 	
 	<p:menu toggleable="true">
 	   <p:submenu label="Skor Yönetimi">
-	       <p:menuitem value="Skor Görüntüle"  icon="ui-icon-disk" />
-	       <p:menuitem value="Skor Ekle" icon="ui-icon-arrowrefresh-1-w"/>
+	       <p:menuitem value="Skor Görüntüle" url ="skorview.xhtml"  icon="ui-icon-disk" />
+	       <p:menuitem value="Skor Ekle" url="skoradd.xhtml" icon="ui-icon-arrowrefresh-1-w"/>
 	   </p:submenu>
 	   
    	   <p:submenu label="Personel Yönetimi">
-	       <p:menuitem value="Personel Görütüle"  icon="ui-icon-disk" />
-	       <p:menuitem value="Personel Ekle" icon="ui-icon-arrowrefresh-1-w"/>
+	       <p:menuitem value="Personel Görütüle" url ="userview.xhtml"  icon="ui-icon-disk" />
+	       <p:menuitem value="Personel Ekle" url ="useradd.xhtml" icon="ui-icon-arrowrefresh-1-w"/>
 	   </p:submenu>
 	</p:menu>
 	
@@ -34,11 +34,7 @@
 			<h:outputText value="#{haber.duyuru}"/>
 		</p:column>
 	</p:dataTable>
-
-
 </p:panelGrid>
 </h:form>
-
-
 </h:body>
 </html>
