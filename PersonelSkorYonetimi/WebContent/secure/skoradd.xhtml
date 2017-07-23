@@ -29,33 +29,19 @@
 	<p:panel>
 	<p:messages autoUpdate="true"/>
 	 <h:panelGrid columns="3" cellpadding="5">
-            <p:outputLabel for="textName" value="İsim" />
-            <p:inputText id="textName" value="#{personController.personAdd.name}" required="true" label="Firstname">
-                <f:validateLength minimum="2" />
-            </p:inputText>
-            <p:message for="textName" />
+            <p:outputLabel for="perName" value="Personel İsmi" />
+	       	<p:selectOneMenu id="perName" value="#{assessmentController.secilenPersonelName}">
+            	<f:selectItems value="#{assessmentController.personName}" />
+        	</p:selectOneMenu>
+            <p:message for="perName" />
             
-            <p:outputLabel for="textUserName" value="Kullanci Adi" />
-            <p:inputText id="textUserName" value="#{personController.personAdd.userName}" required="true" label="Firstname">
-                <f:validateLength minimum="2" />
-            </p:inputText>
-            <p:message for="textUserName" />
-            
-            <p:outputLabel for="textPassWord" value="Şifre" />
-            <p:inputText id="textPassWord" value="#{personController.personAdd.password}" required="true" label="Firstname">
-                <f:validateLength minimum="2" />
-            </p:inputText>
-            <p:message for="textPassWord" />
-            
-            <p:outputLabel for="textRole" value="Role" />
-            <p:inputText id="textRole" value="#{personController.personAdd.role}" validatorMessage="Role Gerekli">
-               <f:validateLength/> 
-            </p:inputText>
-            <p:message for="textRole" />
+            <p:outputLabel value="Yorum:" />
+			<p:inputTextarea value="#{assessmentController.assAdd.assessmentNote}" rows="5" cols="30" counter="display" maxlength="30" counterTemplate="{0} kaldı." autoResize="false" />
+            <h:outputText id="display" />
  
 			<h:outputText value=""/>
 			<h:outputText value=""/>
- 			<p:commandButton  value="Kayıt Et" action="#{personController.save}" />
+ 			<p:commandButton  value="Kayıt Et" action="#{assessmentController.save}" />
  
         </h:panelGrid>
 	

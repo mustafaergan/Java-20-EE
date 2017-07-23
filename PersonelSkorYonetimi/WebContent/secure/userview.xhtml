@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</h:head>
+<h:body>
+<h:form>
+<p:growl id="messages" showDetail="false"/>
+<p:panelGrid columns="2">
+	
+	<p:menu toggleable="true">
+	   <p:submenu label="Skor Yönetimi">
+	       <p:menuitem value="Skor Görüntüle" url ="skorview.xhtml"  icon="ui-icon-disk" />
+	       <p:menuitem value="Skor Ekle" url="skoradd.xhtml" icon="ui-icon-arrowrefresh-1-w"/>
+	   </p:submenu>
+	   
+   	   <p:submenu label="Personel Yönetimi">
+	       <p:menuitem value="Personel Görütüle" url ="userview.xhtml"  icon="ui-icon-disk" />
+	       <p:menuitem value="Personel Ekle" url ="useradd.xhtml" icon="ui-icon-arrowrefresh-1-w"/>
+	   </p:submenu>
+	</p:menu>
+	
+	<p:dataTable id="tbl"  var ="per" value="#{personController.personList}">
+		<p:column headerText="İsim" sortBy="#{per.name}">
+			<h:outputText value="#{per.name}"/>
+		</p:column>
+		<p:column headerText="Kullanici İsmi" sortBy="#{per.userName}" >
+			<h:outputText value="#{per.userName}" />
+		</p:column>
+		<p:column headerText="Rol">
+			<h:outputText value="#{per.role}"/>
+		</p:column>
+	</p:dataTable>
+	
+	 
+    <h3>Export Page Data Only</h3>
+    <h:commandLink>
+        <p:graphicImage width="100" height="100" url="/resource/login.png" />
+        <p:dataExporter type="xls" target="tbl" fileName="kul" pageOnly="true"/>
+    </h:commandLink>
+	
+</p:panelGrid>
+</h:form>
+</h:body>
+</html>
