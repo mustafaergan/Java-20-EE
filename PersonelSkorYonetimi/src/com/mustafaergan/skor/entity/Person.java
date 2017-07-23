@@ -2,7 +2,7 @@ package com.mustafaergan.skor.entity;
 
 public class Person {
 	
-	int id;
+	String id;
 	
 	String name = "asd";
 	
@@ -12,10 +12,14 @@ public class Person {
 	
 	int role;
 	
-	
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
+	
+	public String getId() {
+		return id;
+	}
+	
 	
 	public void setName(String name) {
 		this.name = name;
@@ -33,9 +37,6 @@ public class Person {
 		this.userName = userName;
 	}
 	
-	public int getId() {
-		return id;
-	}
 	
 	public String getName() {
 		return name;

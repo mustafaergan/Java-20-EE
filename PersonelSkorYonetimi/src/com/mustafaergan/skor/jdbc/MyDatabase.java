@@ -2,7 +2,6 @@ package com.mustafaergan.skor.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -14,6 +13,14 @@ public class MyDatabase {
 
 		String url = "jdbc:mysql://localhost:3306/skor";
 		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e1) {
+			System.out.println("bulamadim");
+			e1.printStackTrace();
+			return;
+		}
+		
 		
 		try {
 			Connection con = 
@@ -24,7 +31,7 @@ public class MyDatabase {
 			
 		String SQL = "INSERT INTO PERSON"
 				+ " (id,name,username,password,role)"
-				+ " values(%s,'%s','%s','%s',"
+				+ " values('%s','%s','%s','%s',"
 				+ " %s)";
 		
 		SQL = String.format(SQL,person.getId(), 
@@ -38,7 +45,6 @@ public class MyDatabase {
 		
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

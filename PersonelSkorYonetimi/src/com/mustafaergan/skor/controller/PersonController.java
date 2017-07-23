@@ -1,5 +1,7 @@
 package com.mustafaergan.skor.controller;
 
+import java.util.UUID;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -22,6 +24,7 @@ public class PersonController {
 	public void save(){
 		System.out.println(personAdd.getName());
 		MyDatabase database = new MyDatabase();
+		personAdd.setId(UUID.randomUUID().toString());
 		database.addPerson(personAdd);
 	}
 	
