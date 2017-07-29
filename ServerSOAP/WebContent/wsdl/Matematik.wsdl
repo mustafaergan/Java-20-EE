@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://matematik.mustafaergan.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://matematik.mustafaergan.com" xmlns:intf="http://matematik.mustafaergan.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://matematik.mustafaergan.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="control">
+    <complexType/>
+   </element>
+   <element name="controlResponse">
+    <complexType/>
+   </element>
+   <element name="toplama">
+    <complexType>
+     <sequence>
+      <element name="a" type="xsd:int"/>
+      <element name="b" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="toplamaResponse">
+    <complexType>
+     <sequence>
+      <element name="toplamaReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="toplamaResponse">
+
+      <wsdl:part element="impl:toplamaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlResponse">
+
+      <wsdl:part element="impl:controlResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlRequest">
+
+      <wsdl:part element="impl:control" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toplamaRequest">
+
+      <wsdl:part element="impl:toplama" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Matematik">
+
+      <wsdl:operation name="control">
+
+         <wsdl:input message="impl:controlRequest" name="controlRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:controlResponse" name="controlResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toplama">
+
+         <wsdl:input message="impl:toplamaRequest" name="toplamaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:toplamaResponse" name="toplamaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MatematikSoapBinding" type="impl:Matematik">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="control">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="controlRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="controlResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toplama">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="toplamaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="toplamaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MatematikService">
+
+      <wsdl:port binding="impl:MatematikSoapBinding" name="Matematik">
+
+         <wsdlsoap:address location="http://localhost:8080/ServerSOAP/services/Matematik"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

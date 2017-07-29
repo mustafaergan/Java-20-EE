@@ -1,0 +1,32 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MatematikService WSDL service -->
+
+  <service name="Matematik" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://matematik.mustafaergan.com"/>
+      <parameter name="wsdlServiceElement" value="MatematikService"/>
+      <parameter name="schemaQualified" value="http://matematik.mustafaergan.com"/>
+      <parameter name="wsdlServicePort" value="Matematik"/>
+      <parameter name="className" value="com.mustafaergan.matematik.MatematikSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Matematik"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="control" qname="operNS:control" xmlns:operNS="http://matematik.mustafaergan.com" soapAction="" >
+      </operation>
+      <operation name="toplama" qname="operNS:toplama" xmlns:operNS="http://matematik.mustafaergan.com" returnQName="retNS:toplamaReturn" xmlns:retNS="http://matematik.mustafaergan.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:a" xmlns:pns="http://matematik.mustafaergan.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:b" xmlns:pns="http://matematik.mustafaergan.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="toplama control"/>
+
+  </service>
+</deployment>
